@@ -5,6 +5,24 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleone={
+    title:'Article-One',
+    heading:'article 1',
+    context:`<p>
+            This is the content of article-one.This is the content of article-one.This is the conte of article-one.This is the content of article-one.This is the content of article-one.This is the content of article-one.This is the content of article-one.
+            </p>
+                        <p>
+            This is the content of article-one.This is the content of article-one.This is the content of article-one.This is the content of article-one.This is the content of article-one.This is the content of article-one.This is the content of article-one.
+            </p>
+                        <p>
+            This is the content of article-one.This is the content of article-one.This is the content of article-one.This is the content of article-one.This is the content of article-one.This is the content of article-one.This is the content of article-one.
+            </p> `
+};
+function createtemplate(data){
+    title=data.title;
+    heading=data.heading;
+    context=data.context;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
